@@ -52,9 +52,7 @@ const ProjectCreate = () => {
           variant: 'success',
           message: '发布成功'
         })
-        setTimeout(() => {
-          location.href = '/admin/#/message'
-        }, 2000)
+        setTimeout(() => <Redirect to="message" /> , 2000)
       } else {
         Notification.notice({
           variant: 'error',

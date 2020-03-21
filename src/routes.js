@@ -25,9 +25,7 @@ const routes = [
       {
         path: '/auth/logout',
         exact: true,
-        component: () => {
-          location.href = '/account/logout'
-        }
+        component: () => <Redirect to="/account/logout" />
       }
     ]
   },
