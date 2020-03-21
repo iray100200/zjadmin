@@ -36,7 +36,6 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 0,
     display: 'flex',
     alignItems: 'center',
-    height: 55,
     overflow: 'hidden'
   },
   apps: {
@@ -59,7 +58,7 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'center',
   },
   button: {
-    height: 54,
+    height: '100%',
     background: '#0080fa',
     color: '#fff',
     borderTopLeftRadius: 0,

@@ -81,7 +81,7 @@ const TopBar = props => {
   const classes = useStyles()
 
   const handleLogout = () => {
-    return <Redirect to="/account/logout" />
+    return window.location.href = '/account/logout'
   }
 
   return (
@@ -102,8 +102,8 @@ const TopBar = props => {
             onClick={handleLogout}
           >
             <InputIcon className={classes.logoutIcon} />
-            退出
-          </Button>
+              退出
+            </Button>
         </Hidden>
         <Hidden lgUp>
           <IconButton
