@@ -6,6 +6,6 @@ export default () => {
   return <div className="home" style={{ padding: 24 }}>
     <Typography variant="h3">欢迎使用镇江市专利网站管理系统</Typography>
     <br />
-    <Typography variant="h5"><a href={window.localtion.origin.replace(/9002/, 9001)}>返回网站首页</a></Typography>
+    <Typography variant="h5"><a href={window.location.origin.replace(/9002/, 9001)}>返回网站首页</a></Typography>
   </div>
 }
