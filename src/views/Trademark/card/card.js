@@ -37,7 +37,8 @@ const useStyles = makeStyles(theme => ({
   },
   header: {
     maxWidth: '100%',
-    width: 500,
+    paddingRight: theme.spacing(2),
+    width: 480,
     overflow: 'hidden',
     display: 'flex',
     [theme.breakpoints.down('sm')]: {
@@ -47,7 +48,16 @@ const useStyles = makeStyles(theme => ({
   },
   stats: {
     padding: theme.spacing(1),
-    flexGrow: 0.7,
+    paddingRight: theme.spacing(2),
+    flexGrow: 0.5,
+    whiteSpace: 'nowrap',
+    [theme.breakpoints.down('sm')]: {
+      flexBasis: '50%'
+    }
+  },
+  stats2: {
+    padding: theme.spacing(1),
+    flexGrow: 0.4,
     whiteSpace: 'nowrap',
     [theme.breakpoints.down('sm')]: {
       flexBasis: '50%'
@@ -74,7 +84,7 @@ const ProjectCard = props => {
           <CardMedia image={project.buyPic} style={{ minWidth: 80, marginRight: 20 }} />
           <div>
             <strong>
-              {project.buyName}（{project.trademarkAgency}）
+              {project.buyName}
             </strong>
             <Typography style={{ marginTop: 6 }} variant="body2">
               <span>
@@ -87,18 +97,33 @@ const ProjectCard = props => {
           </div>
         </div>
         <div className={classes.stats}>
-          <Typography style={{ marginBottom: 4 }} variant="body1">
-            {project.trademarkApplicationCnname}
+          <Typography variant="body2">
+            申请人：{project.trademarkApplicationCnname}
           </Typography>
           <Typography variant="body2">
             申请地址：{project.trademarkApplicationCnaddress}
           </Typography>
           <Typography variant="body2">
-            商标状态：{project.trademarkStatus}
+            代理公司：{project.trademarkAgency}
           </Typography>
           <Typography variant="body2">
-            申请号：{project.trademarkApplicationNumber}
+            申请号码：{project.trademarkApplicationNumber}
           </Typography>
+        </div>
+        <div className={classes.stats2}>
+          <Typography variant="body2">
+            商标名称：{project.trademarkName}
+          </Typography>
+          <Typography variant="body2">
+            商标类别：{project.buyTypeName}
+          </Typography>
+          <Typography variant="body2">
+            国际分类号：{project.trademarkInternationalNum}
+          </Typography>
+          <Typography variant="body2">
+            商标状态：{project.trademarkStatus}
+          </Typography>
+
         </div>
         <div className={classes.actions}>
           <a target="_blank" href={project.buyUrl}>

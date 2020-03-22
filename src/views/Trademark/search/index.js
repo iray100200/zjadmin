@@ -79,7 +79,7 @@ const useStateWithCallback = (initilValue, callBack) => {
 
 export default (props) => {
   const [trademarkType, setTrademarkType] = useState([])
-  const [searchType, setSearchType] = useState("buyTypeName")
+  const [searchType, setSearchType] = useState("trademarkName")
   const [searched, setSearched] = useState(false)
   const [keyword, setKeyword] = useState('')
   const [total, setTotal] = useState('')
@@ -159,6 +159,7 @@ export default (props) => {
           <Grid item style={{ display: 'flex', padding: 0, paddingTop: 32 }} xs={12}>
             <FormControl style={{ width: 180, marginRight: 12 }} variant="outlined">
               <Select onChange={handleSearchTypeChange} value={searchType} fullWidth>
+                <MenuItem value={"trademarkName"}>商标名称</MenuItem>
                 <MenuItem value={"buyTypeName"}>产品名称</MenuItem>
                 <MenuItem value={"trademarkAgency"}>代理机构</MenuItem>
                 <MenuItem value={"trademarkApplicationCnname"}>申请人</MenuItem>
