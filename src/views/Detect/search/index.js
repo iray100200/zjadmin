@@ -36,7 +36,6 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 0,
     display: 'flex',
     alignItems: 'center',
-    overflow: 'hidden'
   },
   apps: {
     marginTop: theme.spacing(1),
