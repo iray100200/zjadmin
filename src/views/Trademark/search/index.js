@@ -160,7 +160,8 @@ export default (props) => {
             <FormControl style={{ width: 180, marginRight: 12 }} variant="outlined">
               <Select onChange={handleSearchTypeChange} value={searchType} fullWidth>
                 <MenuItem value={"trademarkName"}>商标名称</MenuItem>
-                <MenuItem value={"buyTypeName"}>产品名称</MenuItem>
+                <MenuItem value={"buyTypeName"}>产品类型</MenuItem>
+                <MenuItem value={"buyContent"}>商品详情</MenuItem>
                 <MenuItem value={"trademarkAgency"}>代理机构</MenuItem>
                 <MenuItem value={"trademarkApplicationCnname"}>申请人</MenuItem>
               </Select>

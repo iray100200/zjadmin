@@ -83,13 +83,9 @@ const ProjectCard = props => {
         <div className={classes.header}>
           <CardMedia image={project.buyPic} style={{ minWidth: 80, marginRight: 20 }} />
           <div>
-            <strong>
-              {project.buyName}
-            </strong>
+            <strong dangerouslySetInnerHTML={{ __html: project.buyName }}></strong>
             <Typography style={{ marginTop: 6 }} variant="body2">
-              <span>
-                {project.buyContent}
-              </span>
+              <span dangerouslySetInnerHTML={{ __html: project.buyContent }}></span>
             </Typography>
             <Typography style={{ marginTop: 4 }} variant="body2">
               {project.buySource} <b>{project.buyPrice && ('￥' + project.buyPrice)}</b>
@@ -98,32 +94,31 @@ const ProjectCard = props => {
         </div>
         <div className={classes.stats}>
           <Typography variant="body2">
-            申请人：{project.trademarkApplicationCnname}
+            申请人：<span dangerouslySetInnerHTML={{ __html: project.trademarkApplicationCnname }}></span>
           </Typography>
           <Typography variant="body2">
-            申请地址：{project.trademarkApplicationCnaddress}
+            申请地址：<span dangerouslySetInnerHTML={{ __html: project.trademarkApplicationCnaddress }}></span>
           </Typography>
           <Typography variant="body2">
-            代理公司：{project.trademarkAgency}
+            代理公司：<span dangerouslySetInnerHTML={{ __html: project.trademarkAgency }}></span>
           </Typography>
           <Typography variant="body2">
-            申请号码：{project.trademarkApplicationNumber}
+            申请号码：<span dangerouslySetInnerHTML={{ __html: project.trademarkApplicationNumber }}></span>
           </Typography>
         </div>
         <div className={classes.stats2}>
           <Typography variant="body2">
-            商标名称：{project.trademarkName}
+            商标名称：<span dangerouslySetInnerHTML={{ __html: project.trademarkName }}></span>
           </Typography>
           <Typography variant="body2">
-            商标类别：{project.buyTypeName}
+            商标类别：<span dangerouslySetInnerHTML={{ __html: project.buyTypeName }}></span>
           </Typography>
           <Typography variant="body2">
-            国际分类号：{project.trademarkInternationalNum}
+            国际分类号：<span dangerouslySetInnerHTML={{ __html: project.trademarkInternationalNum }}></span>
           </Typography>
           <Typography variant="body2">
             商标状态：{project.trademarkStatus}
           </Typography>
-
         </div>
         <div className={classes.actions}>
           <a target="_blank" href={project.buyUrl}>
