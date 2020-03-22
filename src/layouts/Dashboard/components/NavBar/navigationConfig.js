@@ -53,7 +53,17 @@ export default [
       {
         title: '主动检测',
         href: '/detect',
-        icon: DirectionsRunIcon
+        icon: DirectionsRunIcon,
+        children: [
+          {
+            title: '专利',
+            href: '/detect/patent'
+          },
+          {
+            title: '商标',
+            href: '/detect/trademark'
+          }
+        ]
       },
       {
         title: '推送抓取',

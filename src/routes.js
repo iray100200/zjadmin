@@ -2,7 +2,6 @@
 /* eslint-disable react/display-name */
 import React, { lazy } from 'react';
 import { Redirect } from 'react-router-dom';
-
 import AuthLayout from './layouts/Auth';
 import ErrorLayout from './layouts/Error';
 import DashboardLayout from './layouts/Dashboard';
@@ -11,6 +10,7 @@ import Message from './views/Message'
 import Catch from './views/Catch'
 import Home from './views/Home'
 import Detect from './views/Detect'
+import Trademark from './views/Trademark'
 
 const routes = [
   {
@@ -68,9 +68,14 @@ const routes = [
         component: Notice
       },
       {
-        path: '/detect',
+        path: '/detect/patent',
         exact: true,
         component: Detect
+      },
+      {
+        path: '/detect/trademark',
+        exact: true,
+        component: Trademark
       },
       {
         path: '/message',
