@@ -49,7 +49,7 @@ server.all(/\/f\/v1/, (req, res, next) => {
 })
 
 server.get('/account/logout', (req, res) => {
-  res.redirect('http://localhost:9001/account/logout')
+  res.redirect('/account/logout')
 })
 
 server.use(express.static('build'))
