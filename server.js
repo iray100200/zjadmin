@@ -14,8 +14,6 @@ server.use(session({
   saveUninitialized: false
 }))
 
-server.use(express.static('build'))
-
 server.get('/user/info', async (req, res) => {
   const cookieData = cookie.parse(req.headers.cookie || '')
   res.status(200).json({
@@ -63,6 +61,11 @@ server.all(/\/f\/v1/, (req, res, next) => {
     res.status(400).json(err)
   }
 })
+
+/**
+ * 放在此处防止未登录时无法返回404
+ */
+server.use(express.static('build'))
 
 server.listen(port, (err) => {
   if (err) throw err
