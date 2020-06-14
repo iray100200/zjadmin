@@ -31,7 +31,7 @@ const Header = props => {
             gutterBottom
             variant="overline"
           >
-            欢迎使用镇江市专利网站管理系统
+            知识产权执法智能平台
           </Typography>
           <Typography
             component="h1"

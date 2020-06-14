@@ -8,10 +8,6 @@ import { Grid, Typography, Button } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(3),
-    height: 300,
-    backgroundImage: `url(/images/covers/cover_2.jpg)`,
-    backgroundSize: 'cover',
-    backgroundPosition: '0 -100%',
     boxShadow: '0 0 1px rgba(0, 0, 0, 0.7)'
   }
 }))
@@ -38,7 +34,7 @@ const Header = props => {
             gutterBottom
             variant="overline"
           >
-            欢迎使用镇江市专利网站管理系统
+            知识产权执法智能平台
           </Typography>
           <Typography
             component="h1"

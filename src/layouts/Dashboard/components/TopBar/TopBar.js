@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Link as RouterLink, Redirect } from 'react-router-dom';
+import {Link as RouterLink, Redirect} from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/styles';
+import {makeStyles} from '@material-ui/styles';
 import {
   AppBar,
   Button,
@@ -76,7 +76,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const TopBar = props => {
-  const { onOpenNavBarMobile, className, ...rest } = props
+  const {onOpenNavBarMobile, className, ...rest} = props
 
   const classes = useStyles()
 
@@ -91,8 +91,8 @@ const TopBar = props => {
       color="primary"
     >
       <Toolbar>
-        <label style={{ color: 'white', fontSize: 20, fontFamily: 'Microsoft Yahei' }}>
-          <img height={52} style={{ position: 'relative', top: 4, left: -4 }} src="/images/logos/logo.png" />
+        <label style={{color: 'white', fontSize: 20, fontFamily: 'Microsoft Yahei'}}>
+          <span style={{ display: 'block', height: 52, width: 400, backgroundRepeat: 'no-repeat', backgroundImage: `url(/images/logos/logo.svg)`, backgroundPosition: '-78px -94px', backgroundSize: '360px 300px' }} />
         </label>
         <div className={classes.flexGrow} />
         <Hidden mdDown>

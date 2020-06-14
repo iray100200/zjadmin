@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
@@ -6,10 +6,9 @@ import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/styles';
 import { Drawer, Divider, Paper, Avatar, Typography } from '@material-ui/core';
 import { Hidden } from '@material-ui/core';
-import Cookies from 'js-cookie'
-import useRouter from 'utils/useRouter';
 import { Navigation } from 'components';
 import navigationConfig from './navigationConfig';
+import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -42,18 +41,14 @@ const useStyles = makeStyles(theme => ({
 
 const NavBar = props => {
   const { openMobile, onMobileClose, className, ...rest } = props;
-
-  const classes = useStyles();
-  const router = useRouter();
-  const session = useSelector(state => state.session);
-
+  const [userName, setUserName] = useState()
   useEffect(() => {
-    if (openMobile) {
-      onMobileClose && onMobileClose();
-    }
-  }, [router.location.pathname]);
-  const cookie_userName = Cookies.get('username')
-  const username = cookie_userName && Buffer.from(cookie_userName, 'base64').toString('utf8')
+    axios.get('/api/user').then(res => {
+      setUserName(res.data.username)
+    })
+  }, [userName])
+  const classes = useStyles();
+  const session = useSelector(state => state.session);
 
   const navbarContent = (
     <div className={classes.content}>
@@ -68,7 +63,7 @@ const NavBar = props => {
           className={classes.name}
           variant="h4"
         >
-          {username}
+          {userName}
         </Typography>
       </div>
       <Divider className={classes.divider} />
