@@ -14,6 +14,20 @@ server.use(session({
   saveUninitialized: false
 }))
 
+server.use(express.static('build'))
+
+server.get('/user/info', async (req, res) => {
+  console.log(req)
+  const cookieData = cookie.parse(req.headers.cookie || '')
+  
+  res.status(200).json({
+    success: true,
+    data: {
+      username: Buffer.from(cookieData.username, 'base64').toString('utf-8')
+    } 
+  })
+})
+
 server.use('*', (req, res, next) => {
   const _cookie = req.headers.cookie
   const cookieData = cookie.parse(_cookie || '')
@@ -47,22 +61,6 @@ server.all(/\/f\/v1/, (req, res, next) => {
     res.status(400).json(err)
   }
 })
-
-server.get('/user', async (req, res) => {
-  const cookieData = cookie.parse(req.headers.cookie || '')
-  res.status(200).json({
-    success: true,
-    data: {
-      username: Buffer.from(cookieData.username, 'base64').toString('utf-8')
-    } 
-  })
-})
-
-server.get('/account/logout', (req, res) => {
-  res.redirect('/account/logout')
-})
-
-server.use(express.static('build'))
 
 server.listen(port, (err) => {
   if (err) throw err
