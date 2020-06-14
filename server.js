@@ -48,6 +48,16 @@ server.all(/\/f\/v1/, (req, res, next) => {
   }
 })
 
+server.get('/user', async (req, res) => {
+  const cookieData = cookie.parse(req.headers.cookie || '')
+  res.status(200).json({
+    success: true,
+    data: {
+      username: Buffer.from(cookieData.username, 'base64').toString('utf-8')
+    } 
+  })
+})
+
 server.get('/account/logout', (req, res) => {
   res.redirect('/account/logout')
 })

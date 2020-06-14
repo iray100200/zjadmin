@@ -43,7 +43,7 @@ const NavBar = props => {
   const { openMobile, onMobileClose, className, ...rest } = props;
   const [userName, setUserName] = useState()
   useEffect(() => {
-    axios.get('/api/user').then(res => {
+    axios.get('/user').then(res => {
       setUserName(res.data.username)
     })
   }, [userName])
