@@ -26,6 +26,10 @@ server.get('/user/info', async (req, res) => {
   })
 })
 
+server.get('/account/logout', (req, res) => {
+  res.redirect('/account/logout')
+})
+
 server.use('*', (req, res, next) => {
   const _cookie = req.headers.cookie
   const cookieData = cookie.parse(_cookie || '')
