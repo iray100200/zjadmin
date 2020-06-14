@@ -44,7 +44,7 @@ const NavBar = props => {
   const [userName, setUserName] = useState()
   useEffect(() => {
     axios.get('/user/info').then(res => {
-      setUserName(res.data.username)
+      setUserName(res.data.data.username)
     })
   }, [userName])
   const classes = useStyles();
