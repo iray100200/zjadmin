@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const session = require('express-session')
 const cookie = require('cookie')
 const port = parseInt(process.env.PORT, 10) || 9002
-const remoteServer = 'http://47.96.129.81:9001'
+const remoteServer = 'http://47.96.129.81:8081'
 const server = express()
 const axios = require('axios')
 
