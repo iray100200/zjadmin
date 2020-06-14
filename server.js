@@ -27,7 +27,7 @@ server.get('/user/info', async (req, res) => {
 })
 
 server.get('/account/logout', (req, res) => {
-  res.redirect('/account/logout')
+  res.redirect('http://' + req.host + ':9001/account/logout')
 })
 
 server.use('*', (req, res, next) => {
