@@ -17,9 +17,7 @@ server.use(session({
 server.use(express.static('build'))
 
 server.get('/user/info', async (req, res) => {
-  console.log(req)
   const cookieData = cookie.parse(req.headers.cookie || '')
-  
   res.status(200).json({
     success: true,
     data: {
